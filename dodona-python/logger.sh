@@ -12,7 +12,7 @@ while true; do
 	# load files first
 	memoryStats=`cat '/sys/fs/cgroup/memory/memory.stat'`
 	memoryUsage=`cat '/sys/fs/cgroup/memory/memory.usage_in_bytes'`
-	cpuStats=`cat '/sys/fs/cgroup/cpu/cpuacct.stat'`
+	cpuStats=`cat '/sys/fs/cgroup/cpuacct/cpuacct.stat'`
 
 	# gather metrics
 	activeAnon=`echo "$memoryStats" | grep '^total_active_anon ' | cut -d ' ' -f 2`
