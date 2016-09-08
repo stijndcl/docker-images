@@ -20,7 +20,7 @@ cd /home/runner
 LOGGER_PID=$!
 
 # switch to user "runner" and start the script
-su runner -c "${RUNNER_SCRIPT}" <&0
+su runner -c "PATH='$PATH' ${RUNNER_SCRIPT}" <&0
 
 # it's the exit status of the runner script that we want to return
 STATUS=$?
