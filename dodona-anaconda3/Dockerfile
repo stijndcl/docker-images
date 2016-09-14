@@ -7,5 +7,7 @@ RUN ["useradd", "runner"]
 RUN ["pip", "install", "pylint"]
 RUN ["pip", "install", "jsonschema"]
 
+RUN ["fc-cache", "-f"]
+
 COPY main.sh /main.sh
 COPY logger.sh /logger.sh
