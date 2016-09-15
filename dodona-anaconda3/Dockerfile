@@ -6,6 +6,7 @@ RUN ["useradd", "runner"]
 
 RUN ["pip", "install", "pylint"]
 RUN ["pip", "install", "jsonschema"]
+RUN ["pip", "install", "pyshp"]
 
 RUN ["fc-cache", "-f"]
 
