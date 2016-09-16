@@ -15,18 +15,11 @@ chmod 700 /home/runner
 # make ~runner the current directory
 cd /home/runner
 
-# start memory footprint logging
-/logger.sh &
-LOGGER_PID=$!
-
 # switch to user "runner" and start the script
 su runner -c "PATH='$PATH' ${RUNNER_SCRIPT}" <&0
 
 # it's the exit status of the runner script that we want to return
 STATUS=$?
-
-# stop memory footprint logging
-kill ${LOGGER_PID}
 
 # return the runner script's exit status
 exit $STATUS
