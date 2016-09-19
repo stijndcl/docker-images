@@ -9,3 +9,4 @@ RUN ["cabal", "install", "hunit"]
 
 COPY main.sh /main.sh
 COPY logger.sh /logger.sh
+COPY jsawk/jsawk /usr/bin/jsawk

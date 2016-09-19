@@ -1,0 +1,3 @@
+[submodule "dodona-haskell/jsawk"]
+	path = dodona-haskell/jsawk
+	url = git@github.com:micha/jsawk.git
