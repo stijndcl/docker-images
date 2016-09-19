@@ -16,5 +16,7 @@ RUN ["cabal", "install", "hunit"]
 RUN ["cabal", "install", "missingh"]
 USER root
 
+RUN ["mv", "/home/runner/.cabal", "/"]
+
 COPY main.sh /main.sh
 
