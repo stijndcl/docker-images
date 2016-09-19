@@ -16,7 +16,8 @@ chmod 700 /home/runner
 cd /home/runner
 
 # switch to user "runner" and start the script
-su runner -c "PATH='$PATH' ${RUNNER_SCRIPT}" <&0
+whoami >&2
+su runner -c "PATH='$PATH' ${RUNNER_SCRIPT} ${SECRET_PATH}" <&0
 
 # it's the exit status of the runner script that we want to return
 STATUS=$?
