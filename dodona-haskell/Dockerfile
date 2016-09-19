@@ -8,4 +8,6 @@ RUN ["cabal", "install", "quickcheck"]
 RUN ["cabal", "install", "hunit"]
 
 COPY main.sh /main.sh
-COPY jsawk/jsawk /usr/bin/jsawk
+
+RUN ["apt-get", "update"]
+RUN ["apt-get", "install", "jq"]
