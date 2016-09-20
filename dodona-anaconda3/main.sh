@@ -2,21 +2,13 @@
 
 # process arguments
 RUNNER_SCRIPT=$1
-SECRET_PATH=$2
-
-# make secret path read-only
-# TODO: only directories should have execute permission set (not the regular files)
-chmod -R 555 "${SECRET_PATH}" 2> /dev/null
-
-# create home directory for user "runner"
-chown runner /home/runner
-chmod 700 /home/runner
+LOG_PATH=$2
 
 # make ~runner the current directory
 cd /home/runner
 
 # start memory footprint logging
-/logger.sh &
+/logger.sh "$LOG_PATH" &
 LOGGER_PID=$!
 
 #echo 'start the judge without su'

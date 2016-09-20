@@ -9,10 +9,7 @@ RUN ["apt-get", "install", "jq"]
 RUN ["chmod", "711", "/mnt"]
 
 # Add the user which will run the student's code and the judge.
-RUN ["useradd", "runner"]
-RUN ["mkdir", "/home/runner"]
-RUN ["chown", "runner", "/home/runner"]
-RUN ["chmod", "700", "/home/runner"]
+RUN ["useradd", "-m", "runner"]
 
 # As the runner user
 WORKDIR /home/runner

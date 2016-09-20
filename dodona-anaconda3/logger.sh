@@ -1,5 +1,7 @@
 #!/bin/bash
 
+LOG_PATH="$1"
+
 # TODO: shorter time intervals at the start of the script and gradually longer time intervals in later stages
 
 beginTime=`date +%s%3N`
@@ -24,11 +26,11 @@ while true; do
 	anonymousMemory=$(($activeAnon + $inactiveAnon))
 
 	# write to logs
-	printf "%s\t%s\n" "$elapsedTime" "$memoryUsage" >> memory_usage.logs
-	printf "%s\t%s\n" "$elapsedTime" "$activeAnon" >> anonymous_memory.logs 
-	printf "%s\t%s\n" "$elapsedTime" "$anonymousMemory" >> total_anonymous_memory.logs 
-	printf "%s\t%s\n" "$elapsedTime" "$userTime" >> user_time.logs
-	printf "%s\t%s\n" "$elapsedTime" "$systemTime" >> system_time.logs
+	printf "%s\t%s\n" "$elapsedTime" "$memoryUsage" >> "$LOG_PATH/memory_usage.logs"
+	printf "%s\t%s\n" "$elapsedTime" "$activeAnon" >> "$LOG_PATH/anonymous_memory.logs"
+	printf "%s\t%s\n" "$elapsedTime" "$anonymousMemory" >> "$LOG_PATH/total_anonymous_memory.logs"
+	printf "%s\t%s\n" "$elapsedTime" "$userTime" >> "$LOG_PATH/user_time.logs"
+	printf "%s\t%s\n" "$elapsedTime" "$systemTime" >> "$LOG_PATH/system_time.logs"
 
 	# wait a bit
 	sleep 0.05
