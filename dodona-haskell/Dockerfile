@@ -2,7 +2,7 @@ FROM haskell:7
 
 # Install jq for json querying in bash
 RUN ["apt-get", "update"]
-RUN ["apt-get", "install", "jq"]
+RUN ["apt-get", "-y", "install", "jshon"]
 
 # Make sure the students can't find our secret path, which is mounted in
 # /mnt with a secure random name.
