@@ -1,5 +1,8 @@
 FROM continuumio/anaconda3
 
+RUN ["apt-get", "update"]
+RUN ["apt-get", "-y", "install", "jshon"]
+
 RUN ["chmod", "711", "/mnt"]
 
 RUN ["useradd", "-m", "runner"]

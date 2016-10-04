@@ -20,6 +20,7 @@ USER runner
     RUN ["cabal", "install", "quickcheck"]
     RUN ["cabal", "install", "hunit"]
     RUN ["cabal", "install", "missingh"]
+    RUN ["cabal", "install", "aeson"]
 
     # Create the working directory
     RUN ["mkdir", "workdir"]

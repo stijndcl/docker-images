@@ -1,4 +1,4 @@
-#!/bin/sh 
+#!/bin/bash
 
 # process arguments
 RUNNER_SCRIPT=$1
@@ -11,14 +11,19 @@ cd /home/runner
 /logger.sh "$LOG_PATH" &
 LOGGER_PID=$!
 
-#echo 'start the judge without su'
+# checkout the working directory
+config="$(cat)"
+pushd "$(jshon -e 'workdir' -u <<<"$config")"
 
 # switch to user "runner" and start the script
-su runner -c "PATH='$PATH' ${RUNNER_SCRIPT}" <&0
+su runner -c "PATH='$PATH' ${RUNNER_SCRIPT}" <<<"$config"
 #${RUNNER_SCRIPT} <&0
 
 # it's the exit status of the runner script that we want to return
 STATUS=$?
+
+# Leaving the directory
+popd
 
 #echo 'done with judge'
 
