@@ -22,9 +22,6 @@ su runner -c "PATH='$PATH' ${RUNNER_SCRIPT}" <<<"$config"
 # it's the exit status of the runner script that we want to return
 STATUS=$?
 
-# Leaving the directory
-popd
-
 #echo 'done with judge'
 
 # stop memory footprint logging
