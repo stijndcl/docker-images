@@ -13,7 +13,7 @@ LOGGER_PID=$!
 
 # checkout the working directory
 config="$(cat)"
-pushd "$(jshon -e 'workdir' -u <<<"$config")"
+cd "$(jshon -e 'workdir' -u <<<"$config")"
 
 # switch to user "runner" and start the script
 su runner -c "PATH='$PATH' ${RUNNER_SCRIPT}" <<<"$config"
