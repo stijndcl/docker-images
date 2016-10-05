@@ -22,9 +22,6 @@ USER runner
     RUN ["cabal", "install", "missingh"]
     RUN ["cabal", "install", "aeson"]
 
-    # Create the working directory
-    RUN ["mkdir", "workdir"]
-
 USER root
 WORKDIR /
 
