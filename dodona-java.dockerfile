@@ -1,4 +1,4 @@
-FROM haskell:7
+FROM openjdk:8
 
 # Install jq for json querying in bash
 RUN ["apt-get", "update"]
@@ -12,19 +12,8 @@ RUN ["chmod", "711", "/mnt"]
 RUN ["useradd", "-m", "runner"]
 
 # As the runner user
-WORKDIR /home/runner
 USER runner
-
-    # Install the cabal packages
-    RUN ["cabal", "update"]
-    RUN ["cabal", "install", "quickcheck"]
-    RUN ["cabal", "install", "hunit"]
-    RUN ["cabal", "install", "missingh"]
-    RUN ["cabal", "install", "aeson"]
-
-    # Create the working directory
-    RUN ["mkdir", "workdir"]
-
+RUN ["mkdir", "/home/runner/workdir"]
 USER root
 
 WORKDIR /home/runner/workdir
