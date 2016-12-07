@@ -10,7 +10,7 @@ RUN ["apt-get", "-y", "install", "figlet"]
 RUN ["apt-get", "-y", "install", "toilet"]
 RUN ["apt-get", "-y", "install", "imagemagick"]
 
-ENV PATH="/usr/games:${PATH}"
+ENV PATH="/home/runner/workdir:/usr/games:${PATH}"
 
 RUN ["chmod", "711", "/mnt"]
 
