@@ -17,10 +17,10 @@ RUN ["cat", "/etc/apt/sources.list"]
 RUN ["apt-get", "update"]
 RUN ["apt-get", "-y", "build-dep", "imagemagick"]
 WORKDIR /tmp
-RUN ["wget", "http://www.imagemagick.org/download/ImageMagick-6.9.6-7.tar.gz"]
-RUN ["tar", "xzvf", "ImageMagick-6.9.6-7.tar.gz"]
-WORKDIR ImageMagick-6.9.6-7
-RUN ["./configure", "--prefix=/usr"]
+RUN ["wget", "http://www.imagemagick.org/download/ImageMagick-6.9.6-8.tar.gz"]
+RUN ["tar", "xzvf", "ImageMagick-6.9.6-8.tar.gz"]
+WORKDIR ImageMagick-6.9.6-8
+RUN ["./configure", "--prefix=/usr", "--with-rsvg=yes"]
 RUN ["make"]
 RUN ["make", "install"]
 WORKDIR /
