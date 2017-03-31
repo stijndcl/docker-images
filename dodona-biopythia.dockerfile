@@ -17,6 +17,18 @@ RUN ["apt-get", "-y", "install", "emboss"]
 RUN ["apt-get", "-y", "install", "gcc"]
 RUN ["pip", "install", "biopython"]
 
+WORKDIR /tmp
+RUN ["apt-get", "-y", "install", "build-essential"]
+RUN ["apt-get", "-y", "install", "zlib1g-dev"]
+RUN ["wget", "http://faculty.virginia.edu/wrpearson/fasta/fasta3/fasta-36.3.8e.tar.gz"]
+RUN ["tar", "xzvf", "fasta-36.3.8e.tar.gz"]
+WORKDIR fasta-36.3.8e/src
+RUN ["make", "-f", "../make/Makefile.linux64", "all"]
+RUN ["sed", "-i", "/XDIR/s_= .*_= /usr/bin_", "../make/Makefile.linux64"]
+RUN ["make", "-f", "../make/Makefile.linux64", "install"]
+WORKDIR /
+RUN ["rm", "-rf", "/tmp/fasta-36.3.8e.tar.gz", "/tmp/fasta-36.3.8e"]
+
 RUN ["fc-cache", "-f"]
 
 WORKDIR /home/runner/workdir
