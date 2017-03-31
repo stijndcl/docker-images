@@ -7,14 +7,8 @@ LOG_PATH=$2
 # kill all child processes on exit
 trap "pkill -P $$" EXIT
 
+# start memory footprint logging
+[ -f /logger.sh ] && /logger.sh "$LOG_PATH" &
 
-if [ -f logger.sh ]; then
-    # start memory footprint logging
-    /logger.sh "$LOG_PATH" &
-    # switch to user "runner" and start the script
-    su runner -c "PATH='$PATH' ${RUNNER_SCRIPT}"
-else
-    # switch to user "runner" and exec the script
-    exec su runner -c "PATH='$PATH' ${RUNNER_SCRIPT}"
-fi
-
+# switch to user "runner" and start the script
+su runner -c "PATH='$PATH' ${RUNNER_SCRIPT}"
