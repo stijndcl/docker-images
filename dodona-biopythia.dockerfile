@@ -8,14 +8,15 @@ USER runner
 RUN ["mkdir", "/home/runner/workdir"]
 USER root
 
-RUN ["pip", "install", "pylint"]
-RUN ["pip", "install", "jsonschema"]
-RUN ["pip", "install", "pyshp"]
-
 RUN ["apt-get", "update"]
-RUN ["apt-get", "-y", "install", "emboss"]
 RUN ["apt-get", "-y", "install", "gcc"]
-RUN ["pip", "install", "biopython"]
+RUN ["apt-get", "-y", "install", "g++"]
+RUN ["pip", "install", "--upgrade", "pylint"]
+RUN ["pip", "install", "--upgrade", "jsonschema"]
+RUN ["pip", "install", "--upgrade", "pyshp"]
+
+RUN ["apt-get", "-y", "install", "emboss"]
+RUN ["pip", "install", "--upgrade", "biopython"]
 
 WORKDIR /tmp
 RUN ["apt-get", "-y", "install", "build-essential"]
