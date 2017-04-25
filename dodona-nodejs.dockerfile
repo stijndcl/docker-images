@@ -6,11 +6,11 @@ RUN ["apt-get", "update"]
 RUN ["apt-get", "-y", "install", "vim"]
 ENV NODE_PATH="/usr/local/lib/node_modules"
 
-
+RUN ["chmod", "711", "/mnt"]
 RUN ["useradd", "-m", "runner"]
 
+
 USER runner
-RUN ["chmod", "711", "/mnt"]
 RUN ["mkdir", "/home/runner/workdir"]
 USER root
 
