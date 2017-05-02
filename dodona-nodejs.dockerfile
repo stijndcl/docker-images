@@ -2,7 +2,7 @@ FROM node
 
 RUN ["npm", "install", "-g", "fs"]
 RUN ["npm", "install", "-g", "deep-equal"]
-RUN ["npm", "install", "-g",  "eslint"]
+RUN ["npm", "install", "-g",  "eslint", "--save-dev"]
 
 RUN ["apt-get", "update"]
 RUN ["apt-get", "-y", "install", "vim"]
