@@ -9,6 +9,7 @@ RUN ["apt-get", "-y", "install", "vim"]
 ENV NODE_PATH="/usr/local/lib/node_modules"
 
 RUN ["chmod", "711", "/mnt"]
+RUN ["userdel", "node"]
 RUN ["useradd", "-m", "runner"]
 
 
