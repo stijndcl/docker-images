@@ -22,6 +22,7 @@ USER runner
     RUN ["cabal", "install", "missingh"]
     RUN ["cabal", "install", "json-builder"]
     RUN ["cabal", "install", "stm"]
+    RUN ["cabal", "install", "hlint"]
 
     # Create the working directory
     RUN ["mkdir", "workdir"]
