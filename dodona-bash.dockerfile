@@ -8,6 +8,7 @@ RUN ["apt-get", "-y", "install", "cowsay"]
 RUN ["apt-get", "-y", "install", "fortune-mod"]
 RUN ["apt-get", "-y", "install", "figlet"]
 RUN ["apt-get", "-y", "install", "toilet"]
+RUN ["apt-get", "-y", "install", "ed"]
 
 # imagemagick
 RUN ["apt-get", "-y", "install", "build-essential"]
@@ -23,6 +24,7 @@ WORKDIR ImageMagick-6.9.7-1
 RUN ["./configure", "--prefix=/usr", "--with-rsvg=yes"]
 RUN ["make"]
 RUN ["make", "install"]
+
 RUN ["apt-get", "-y", "install", "vim"]
 WORKDIR /
 
