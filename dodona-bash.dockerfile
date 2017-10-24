@@ -8,21 +8,8 @@ RUN ["apt-get", "-y", "install", "cowsay"]
 RUN ["apt-get", "-y", "install", "fortune-mod"]
 RUN ["apt-get", "-y", "install", "figlet"]
 RUN ["apt-get", "-y", "install", "toilet"]
+RUN ["apt-get", "-y", "install", "ed"]
 
-# imagemagick
-RUN ["apt-get", "-y", "install", "build-essential"]
-RUN ["apt-get", "-y", "install", "checkinstall"]
-RUN ["sed", "-i", "p;s/deb/deb-src/", "/etc/apt/sources.list"]
-RUN ["cat", "/etc/apt/sources.list"]
-RUN ["apt-get", "update"]
-RUN ["apt-get", "-y", "build-dep", "imagemagick"]
-WORKDIR /tmp
-RUN ["wget", "http://www.imagemagick.org/download/ImageMagick-6.9.7-1.tar.gz"]
-RUN ["tar", "xzvf", "ImageMagick-6.9.7-1.tar.gz"]
-WORKDIR ImageMagick-6.9.7-1
-RUN ["./configure", "--prefix=/usr", "--with-rsvg=yes"]
-RUN ["make"]
-RUN ["make", "install"]
 RUN ["apt-get", "-y", "install", "vim"]
 WORKDIR /
 
