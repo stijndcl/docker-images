@@ -10,12 +10,14 @@ RUN ["npm", "install", "-g",  "eslint", "--save-dev"]
 RUN ["npm", "install", "-g", "jsdom"]
 RUN ["npm", "install", "-g", "jsdom-global"]
 RUN ["npm", "install", "-g", "scratch-vm"]
-RUN ["npm", "install", "-g", "scratch-storage"]
 
+RUN ["apt-get", "update"]
+RUN ["apt-get", "-y", "install", "vim"]
 ENV NODE_PATH="/usr/local/lib/node_modules"
 
 RUN ["chmod", "711", "/mnt"]
 RUN ["useradd", "-m", "runner"]
+
 
 USER runner
 RUN ["mkdir", "/home/runner/workdir"]
