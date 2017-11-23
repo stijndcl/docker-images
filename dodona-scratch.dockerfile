@@ -5,10 +5,15 @@ RUN ["npm", "install", "-g", "deep-equal"]
 RUN ["npm", "install", "-g",  "eslint", "--save-dev"]
 RUN ["npm", "install", "-g", "jsdom"]
 RUN ["npm", "install", "-g", "jsdom-global"]
-RUN ["npm", "install", "-g", "https://github.com/LLK/scratch-vm.git"]
+RUN ["npm", "install", "-g", "scratch-vm"]
+RUN ["npm", "install", "-g", "scratch-storage"]
+RUN ["npm", "install", "-g", "immutable"]
+RUN ["npm", "install", "-g", "escape-html"]
+RUN ["npm", "install", "-g", "htmlparser2"]
+RUN ["npm", "install", "-g", "minilog"]
+RUN ["npm", "install", "-g", "got"]
+RUN ["npm", "install", "-g", "socket.io-client"]
 
-RUN ["apt-get", "update"]
-RUN ["apt-get", "-y", "install", "vim"]
 ENV NODE_PATH="/usr/local/lib/node_modules"
 
 RUN ["chmod", "711", "/mnt"]
