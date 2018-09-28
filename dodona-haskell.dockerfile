@@ -1,4 +1,4 @@
-FROM haskell:7
+FROM haskell:8
 
 # Install jq for json querying in bash
 RUN ["apt-get", "update"]
@@ -23,6 +23,8 @@ USER runner
     RUN ["cabal", "install", "json-builder"]
     RUN ["cabal", "install", "stm"]
     RUN ["cabal", "install", "hlint"]
+
+    RUN ["cabal", "install", "gloss"]
 
     # Create the working directory
     RUN ["mkdir", "workdir"]
