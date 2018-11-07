@@ -10,9 +10,9 @@ RUN ["apt-get", "-y", "install", "figlet"]
 RUN ["apt-get", "-y", "install", "toilet"]
 RUN ["apt-get", "-y", "install", "ed"]
 RUN ["apt-get", "-y", "install", "imagemagick"]
+RUN ["apt-get", "-y", "install", "vim"]
 RUN ["apt-get", "-y", "install", "tree"]
 
-RUN ["apt-get", "-y", "install", "vim"]
 WORKDIR /
 
 ENV PATH="/home/runner/workdir:/usr/games:${PATH}"
