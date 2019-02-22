@@ -1,29 +1,28 @@
 FROM continuumio/anaconda3
 
-RUN ["apt-get", "update"]
-RUN ["apt-get", "-y", "install", "zip"]
-RUN ["apt-get", "-y", "install", "unzip"]
-RUN ["apt-get", "-y", "install", "bc"]
-RUN ["apt-get", "-y", "install", "cowsay"]
-RUN ["apt-get", "-y", "install", "fortune-mod"]
-RUN ["apt-get", "-y", "install", "figlet"]
-RUN ["apt-get", "-y", "install", "toilet"]
-RUN ["apt-get", "-y", "install", "ed"]
-RUN ["apt-get", "-y", "install", "imagemagick"]
-RUN ["apt-get", "-y", "install", "vim"]
-RUN ["apt-get", "-y", "install", "tree"]
-
-WORKDIR /
-
-ENV PATH="/home/runner/workdir:/usr/games:${PATH}"
-
-RUN ["chmod", "711", "/mnt"]
-
-RUN ["useradd", "-m", "runner"]
-
-USER runner
-RUN ["mkdir", "/home/runner/workdir"]
 USER root
+RUN apt-get update && \
+    apt-get -y install --no-install-recommends \
+        zip \
+        unzip \
+        bc \
+        cowsay \
+        fortune-mod \
+        figlet \
+        toilet \
+        ed \
+        imagemagick \
+        vim \
+        tree \
+        poppler-utils \
+        binutils && \
+    rm -rf /var/lib/apt/lists/* && \
+    apt-get clean && \
+    chmod 711 /mnt && \
+    useradd -m runner && \
+    mkdir /home/runner/workdir && \
+    chown runner:runner /home/runner/workdir
+ENV PATH="/home/runner/workdir:/usr/games:${PATH}"
 
 WORKDIR /home/runner/workdir
 COPY main.sh /main.sh
