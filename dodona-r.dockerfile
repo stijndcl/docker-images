@@ -1,20 +1,16 @@
 FROM r-base
 
-# Install jq for json querying in bash
-RUN ["apt-get", "update"]
-RUN ["apt-get", "-y", "install", "jshon"]
-
 # Make sure the students can't find our secret path, which is mounted in
 # /mnt with a secure random name.
-RUN ["chmod", "711", "/mnt"]
-
-# Add the user which will run the student's code and the judge.
-RUN ["useradd", "-m", "runner"]
-
-# As the runner user
-USER runner
-RUN ["mkdir", "/home/runner/workdir"]
-USER root
+RUN apt-get update && \
+  apt-get install -y --no-install-recommends procps && \
+  chmod 711 /mnt && \
+  groupmod -n runner docker && \
+  usermod -l runner -d /home/runner docker && \
+  mkdir -p /home/runner/workdir && \
+  chown -R runner:runner /home/runner && \
+  chown -R runner:runner /mnt && \
+  Rscript -e "install.packages('jsonlite')"
 
 WORKDIR /home/runner/workdir
 COPY main.sh /main.sh
