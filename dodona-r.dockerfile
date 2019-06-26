@@ -10,7 +10,8 @@ RUN apt-get update && \
   mkdir -p /home/runner/workdir && \
   chown -R runner:runner /home/runner && \
   chown -R runner:runner /mnt && \
-  Rscript -e "install.packages('jsonlite')"
+  Rscript -e "install.packages('jsonlite')" && \
+  Rscript -e "install.packages('R6')"
 
 WORKDIR /home/runner/workdir
 COPY main.sh /main.sh
