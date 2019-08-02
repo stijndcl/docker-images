@@ -7,4 +7,4 @@ workflows:
   lint:
     jobs:
       - docker/hadolint:
-          dockerfile: dodona-r.dockerfile
+          dockerfiles: dodona-r.dockerfile
