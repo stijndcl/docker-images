@@ -7,6 +7,7 @@ workflows:
   lint:
     jobs:
       - docker/hadolint:
+          name: anaconda
           dockerfiles: dodona-anaconda3.dockerfile
       - docker/hadolint:
           dockerfiles: dodona-bash.dockerfile
