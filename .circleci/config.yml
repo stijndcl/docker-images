@@ -7,4 +7,22 @@ workflows:
   lint:
     jobs:
       - docker/hadolint:
-          dockerfiles: dodona-anaconda3.dockerfile,dodona-bash.dockerfile,dodona-biopythia.dockerfile,dodona-csharp.dockerfile,dodona-haskell.dockerfile,dodona-java.dockerfile,dodona-nodejs.dockerfile,dodona-prolog.dockerfile,dodona-r.dockerfile,dodona-scratch.dockerfile
+          dockerfiles: dodona-anaconda3.dockerfile
+      - docker/hadolint:
+          dockerfiles: dodona-bash.dockerfile
+      - docker/hadolint:
+          dockerfiles: dodona-biopythia.dockerfile
+      - docker/hadolint:
+          dockerfiles: dodona-csharp.dockerfile
+      - docker/hadolint:
+          dockerfiles: dodona-haskell.dockerfile
+      - docker/hadolint:
+          dockerfiles: dodona-java.dockerfile
+      - docker/hadolint:
+          dockerfiles: dodona-nodejs.dockerfile
+      - docker/hadolint:
+          dockerfiles: dodona-prolog.dockerfile
+      - docker/hadolint:
+          dockerfiles: dodona-r.dockerfile
+      - docker/hadolint:
+          dockerfiles: dodona-scratch.dockerfile
