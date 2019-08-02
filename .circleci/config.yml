@@ -1,0 +1,8 @@
+orbs:
+  docker: circleci/docker
+version: 2.1
+workflows:
+  lint:
+    jobs:
+      - docker/hadolint:
+          dockerfile: dodona-r.dockerfile
