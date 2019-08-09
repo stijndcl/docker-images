@@ -1,9 +1,10 @@
-FROM mono
+FROM mono:6.0.0
 
-# Install jq for json querying in bash
 RUN ["apt-get", "update"]
 RUN ["apt-get", "-y", "install", "jshon"]
 RUN ["apt-get", "-y", "install", "time"]
+RUN ["apt-get", "clean"]
+RUN ["rm", "-rf", "/var/lib/apt/lists/*"]
 
 # Make sure the students can't find our secret path, which is mounted in
 # /mnt with a secure random name.
@@ -16,6 +17,5 @@ RUN ["useradd", "-m", "runner"]
 USER runner
 RUN ["mkdir", "/home/runner/workdir"]
 
-USER root
 WORKDIR /home/runner/workdir
 COPY main.sh /main.sh
