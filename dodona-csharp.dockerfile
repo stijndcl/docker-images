@@ -1,10 +1,10 @@
 FROM mono:6.0.0
 
-RUN ["apt-get", "update"]
-RUN ["apt-get", "-y", "install", "--no-install-recommends", "jshon"]
-RUN ["apt-get", "-y", "install", "--no-install-recommends", "time"]
-RUN ["apt-get", "clean"]
-RUN ["rm", "-rf", "/var/lib/apt/lists/*"]
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends jshon && \
+    apt-get install -y --no-install-recommends time && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # Make sure the students can't find our secret path, which is mounted in
 # /mnt with a secure random name.
