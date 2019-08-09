@@ -1,8 +1,8 @@
 FROM mono:6.0.0
 
 RUN ["apt-get", "update"]
-RUN ["apt-get", "-y", "install", "jshon"]
-RUN ["apt-get", "-y", "install", "time"]
+RUN ["apt-get", "-y", "install", "--no-install-recommends", "jshon"]
+RUN ["apt-get", "-y", "install", "--no-install-recommends", "time"]
 RUN ["apt-get", "clean"]
 RUN ["rm", "-rf", "/var/lib/apt/lists/*"]
 
