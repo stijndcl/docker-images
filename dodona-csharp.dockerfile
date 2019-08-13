@@ -18,4 +18,5 @@ USER runner
 RUN ["mkdir", "/home/runner/workdir"]
 
 WORKDIR /home/runner/workdir
+
 COPY main.sh /main.sh
