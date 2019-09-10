@@ -1,4 +1,4 @@
-FROM continuumio/anaconda3
+FROM continuumio/anaconda3:2019.03
 
 RUN ["chmod", "711", "/mnt"]
 
@@ -8,9 +8,11 @@ RUN ["apt-get", "update"]
 RUN ["apt-get", "-y", "install", "gcc"]
 RUN ["apt-get", "-y", "install", "g++"]
 RUN ["apt-get", "-y", "install", "fontconfig"]
-RUN . /opt/conda/etc/profile.d/conda.sh && \
-    conda activate base && \
-    pip install --upgrade pylint jsonschema pyshp
+# Fix for latest version, but needs activation in runner
+# RUN . /opt/conda/etc/profile.d/conda.sh && \
+#    conda activate base && \
+#    pip install --upgrade pylint jsonschema pyshp
+RUN pip install --upgrade pylint jsonschema pyshp
 
 RUN ["fc-cache", "-f"]
 
