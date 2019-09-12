@@ -1,4 +1,4 @@
-FROM continuumio/anaconda3
+FROM continuumio/anaconda3:2019.03
 
 RUN ["chmod", "711", "/mnt"]
 
