@@ -7,7 +7,7 @@ jobs:
     name: ${{ matrix.image }}
     strategy:
       matrix:
-        image: [anaconda3, bash, biopythia, csharp, haskell, java, java12, nodejs, prolog,r,scratch]
+        image: [anaconda3, bash, biopythia, csharp, haskell, java, java12, nodejs, prolog, python, r, scratch]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
