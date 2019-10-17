@@ -6,6 +6,7 @@ jobs:
   lint:
     name: ${{ matrix.image }}
     strategy:
+      fail-fast: false
       matrix:
         image: [anaconda3, bash, biopythia, csharp, haskell, java, java12, nodejs, prolog, python, r, scratch]
     runs-on: ubuntu-latest
