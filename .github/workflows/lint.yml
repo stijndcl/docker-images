@@ -1,0 +1,16 @@
+name: Lint
+
+on: [push]
+
+jobs:
+  lint:
+    name: ${{ matrix.image }}
+    strategy:
+      matrix:
+        image: [anaconda3, bash, biopythia, csharp, haskell, java, java12, nodejs, prolog,r,scratch]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: brpaz/hadolint-action@master
+        with:
+          dockerfile: dodona-${{ matrix.image }}.dockerfile
