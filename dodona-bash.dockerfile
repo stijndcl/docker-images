@@ -15,7 +15,7 @@ RUN apt-get update && \
         tree=1.8.0-1 \
         poppler-utils=0.71.0-5 \
         binutils=2.31.1-16 \
-        wget && \
+        wget=2.10.1-1.1 && \
     rm -rf /var/lib/apt/lists/* && \
     apt-get clean && \
     # Judge dependencies
