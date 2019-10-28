@@ -14,7 +14,8 @@ RUN apt-get update && \
         vim=2:8.1.0875-5 \
         tree=1.8.0-1 \
         poppler-utils=0.71.0-5 \
-        binutils=2.31.1-16 && \
+        binutils=2.31.1-16 \
+        wget && \
     rm -rf /var/lib/apt/lists/* && \
     apt-get clean && \
     # Judge dependencies
