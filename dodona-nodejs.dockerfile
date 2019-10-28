@@ -3,7 +3,7 @@ FROM node:13.0.1-buster-slim
 RUN chmod 711 /mnt && \
     groupmod -n runner node && \
     usermod -l runner -d /home/runner node && \
-    mkdir /home/runner/workdir && \
+    mkdir -p /home/runner/workdir && \
     chown -R runner:runner /home/runner && \
     chown -R runner:runner /mnt && \
     npm install -g deep-equal@1.1.0 eslint@6.6.0 --save-dev
