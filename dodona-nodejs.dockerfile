@@ -6,7 +6,7 @@ RUN chmod 711 /mnt && \
     mkdir /home/runner/workdir && \
     chown -R runner:runner /home/runner && \
     chown -R runner:runner /mnt && \
-    npm install -g fs deep-equal eslint --save-dev
+    npm install -g deep-equal@1.1.0 eslint@6.6.0 --save-dev
 
 ENV NODE_PATH="/usr/local/lib/node_modules"
 USER runner

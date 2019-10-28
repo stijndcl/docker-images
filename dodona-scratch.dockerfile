@@ -5,8 +5,7 @@ RUN chmod 711 /mnt && \
     usermod -l runner -d /home/runner node && \
     mkdir /home/runner/workdir && \
     chown -R runner:runner /home/runner && \
-    chown -R runner:runner /mnt && \
-    npm install -g fs
+    chown -R runner:runner /mnt
 
 ENV NODE_PATH="/usr/local/lib/node_modules"
 USER runner
