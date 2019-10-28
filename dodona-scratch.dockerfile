@@ -1,16 +1,15 @@
-FROM buildkite/puppeteer
+FROM buildkite/puppeteer:v1.15.0
 
-RUN ["npm", "install", "-g", "fs"]
-RUN ["apt-get", "update"]
+RUN chmod 711 /mnt && \
+    groupmod -n runner node && \
+    usermod -l runner -d /home/runner node && \
+    mkdir /home/runner/workdir && \
+    chown -R runner:runner /home/runner && \
+    chown -R runner:runner /mnt && \
+    npm install -g fs
 
 ENV NODE_PATH="/usr/local/lib/node_modules"
-
-RUN ["chmod", "711", "/mnt"]
-RUN ["userdel", "node"]
-RUN ["useradd", "-m", "runner"]
-
 USER runner
-RUN ["mkdir", "/home/runner/workdir"]
 WORKDIR /home/runner/workdir
 
 COPY main.sh /main.sh
