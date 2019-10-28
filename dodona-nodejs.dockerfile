@@ -1,20 +1,15 @@
-FROM node
+FROM node:13.0.1-buster-slim
 
-RUN ["npm", "install", "-g", "fs"]
-RUN ["npm", "install", "-g", "deep-equal"]
-RUN ["npm", "install", "-g",  "eslint", "--save-dev"]
+RUN chmod 711 /mnt && \
+    groupmod -n runner node && \
+    usermod -l runner -d /home/runner node && \
+    mkdir -p /home/runner/workdir && \
+    chown -R runner:runner /home/runner && \
+    chown -R runner:runner /mnt && \
+    npm install -g deep-equal@1.1.0 eslint@6.6.0 --save-dev
 
-RUN ["apt-get", "update"]
-RUN ["apt-get", "-y", "install", "vim"]
 ENV NODE_PATH="/usr/local/lib/node_modules"
-
-RUN ["chmod", "711", "/mnt"]
-RUN ["userdel", "node"]
-RUN ["useradd", "-m", "runner"]
-
-
 USER runner
-RUN ["mkdir", "/home/runner/workdir"]
 WORKDIR /home/runner/workdir
 
 COPY main.sh /main.sh
