@@ -7,6 +7,7 @@ RUN apt-get update && \
         bc=1.07.1-2+b1 \
         cowsay=3.03+dfsg2-6 \
         fortune-mod=1:1.99.1-7+b1 \
+        file=1:5.35-4+deb10u1 \
         figlet=2.2.5-3 \
         toilet=0.3-1.2 \
         ed=1.15-1 \
