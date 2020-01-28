@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:3.11.3
 
 RUN apk add --no-cache nodejs=12.14.0-r0 yarn=1.19.2-r0 shadow=4.7-r1 \
                        jq=1.6-r0 bash=5.0.11-r1 curl=7.67.0-r0 sed=4.7-r0 \
@@ -7,7 +7,8 @@ RUN apk add --no-cache nodejs=12.14.0-r0 yarn=1.19.2-r0 shadow=4.7-r1 \
     && chmod 711 /mnt \
     && adduser -D runner
 
-RUN curl -L https://github.com/sqlmapproject/sqlmap/archive/1.4.tar.gz \
+RUN set -o pipefail \
+    && curl -L https://github.com/sqlmapproject/sqlmap/archive/1.4.tar.gz \
         | tar xz --directory /usr/local/share/ \
     && mv /usr/local/share/sqlmap-1.4 /usr/local/share/sqlmap \
     && ln -sf /usr/local/share/sqlmap/sqlmap.py /usr/local/bin/sqlmap
