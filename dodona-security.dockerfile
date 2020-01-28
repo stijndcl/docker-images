@@ -7,8 +7,8 @@ RUN apk add --no-cache nodejs=12.14.0-r0 yarn=1.19.2-r0 shadow=4.7-r1 \
     && chmod 711 /mnt \
     && adduser -D runner
 
-RUN set -o pipefail \
-    && curl -L https://github.com/sqlmapproject/sqlmap/archive/1.4.tar.gz \
+SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
+RUN curl -L https://github.com/sqlmapproject/sqlmap/archive/1.4.tar.gz \
         | tar xz --directory /usr/local/share/ \
     && mv /usr/local/share/sqlmap-1.4 /usr/local/share/sqlmap \
     && ln -sf /usr/local/share/sqlmap/sqlmap.py /usr/local/bin/sqlmap
