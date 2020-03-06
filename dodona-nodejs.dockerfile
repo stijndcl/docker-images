@@ -1,4 +1,4 @@
-FROM node:13.8.0-buster-slim
+FROM node:13.10.1-buster-slim
 
 RUN chmod 711 /mnt && \
     groupmod -n runner node && \
