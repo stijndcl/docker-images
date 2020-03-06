@@ -18,6 +18,14 @@ for arg in $@; do
     fi
 done
 
+if [ -z "$images" ]; then
+    echo "usage: $0 IMAGE..."
+    echo "examples:"
+    echo "    $0 dodona-python # only deploy dodona-python image"
+    echo "    $0 *             # deploy all images which have a dockerfile in this directory"
+    exit 1
+fi
+
 for worker in $workers; do
     for img in $images; do
         echo "=== Pulling $img on $worker ==="
