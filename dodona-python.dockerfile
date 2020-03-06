@@ -17,7 +17,7 @@ RUN chmod 711 /mnt && \
   # Judge dependencies
   pip install --upgrade pylint==2.4.2 jsonschema==3.1.1 pyshp==2.1.0 psutil==5.7.0 mako==1.1.2 pydantic==1.4 pyhumps==1.3.1 typing_inspect==0.5.0 && \
   # Exercise dependencies
-  pip install --upgrade numpy==1.17.2 biopython==1.74
+  pip install --upgrade numpy==1.17.2 biopython==1.74 sortedcontainers==2.1.0
 
 WORKDIR /tmp
 
