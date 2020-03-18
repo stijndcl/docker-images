@@ -10,6 +10,8 @@ RUN apt-get update && \
         file=1:5.35-4+deb10u1 \
         fortune-mod=1:1.99.1-7+b1 \
         git=1:2.20.1-2+deb10u1 \
+        gcc=4:8.3.0-1 \
+        gcc-multilib=4:8.3.0-1 \
         imagemagick=8:6.9.10.23+dfsg-2.1 \
         librsvg2-bin=2.44.10-2.1 \
         poppler-utils=0.71.0-5 \
