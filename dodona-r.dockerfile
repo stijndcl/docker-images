@@ -3,7 +3,7 @@ FROM r-base:3.6.3
 # Make sure the students can't find our secret path, which is mounted in
 # /mnt with a secure random name.
 RUN apt-get update && \
-  apt-get install -y --no-install-recommends procps=2:3.3.15-2+b1 && \
+  apt-get install -y --no-install-recommends procps=2:3.3.16-4 && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/* && \
   chmod 711 /mnt && \
