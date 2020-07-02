@@ -1,4 +1,4 @@
-FROM alpine:3.11.6
+FROM alpine:3.12.0
 
 RUN apk add --no-cache yarn=1.19.2-r0 shadow=4.7-r1 \
                        jq=1.6-r0 bash=5.0.11-r1 curl=7.67.0-r0 sed=4.7-r0 \
