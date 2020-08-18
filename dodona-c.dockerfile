@@ -1,12 +1,14 @@
 FROM python:3.8.3-slim-buster
 
-RUN ["apt-get", "update"]
-RUN apt-get install -y jshon=20131010-3+b1 \
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+                       jshon=20131010-3+b1 \
                        libgtest-dev=1.8.1-3 \ 
                        g++=4:8.3.0-1 \
-                       cmake=3.13.4-1
-
-RUN ["apt-get", "clean"]
+                       make=4.2.1-1.2 \
+                       cmake=3.13.4-1 && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # Make sure the students can't find our secret path, which is mounted in
 # /mnt with a secure random name.
@@ -19,7 +21,7 @@ RUN ["useradd", "-m", "runner"]
 WORKDIR /usr/src/gtest
 RUN ["cmake", "CMakeLists.txt"]
 RUN ["make"]
-RUN cp *.a /usr/lib
+RUN cp -- *.a /usr/lib
 RUN ["mkdir", "/usr/local/lib/gtest"]
 RUN ["ln", "-s", "/usr/lib/libgtest.a", "/usr/local/lib/gtest/libgtest.a"]
 RUN ["ln", "-s", "/usr/lib/libgtest_main.a", "/usr/local/lib/gtest/libgtest_main.a"]
