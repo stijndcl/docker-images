@@ -33,7 +33,9 @@ RUN apt-get update && \
   Rscript -e "install.packages('plotrix')" && \
   Rscript -e "install.packages('scales')" && \
   Rscript -e "install.packages('scatterplot3d')" && \
-  Rscript -e "install.packages('tidyverse')"
+  Rscript -e "install.packages('tidyverse')" && \
+  Rscript -e "install.packages('ISLR')" && \
+  Rscript -e "install.packages('MASS')"
 
 
 USER runner
