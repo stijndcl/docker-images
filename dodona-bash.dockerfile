@@ -12,7 +12,7 @@ RUN apt-get update && \
         git=1:2.20.1-2+deb10u3 \
         gcc=4:8.3.0-1 \
         gcc-multilib=4:8.3.0-1 \
-        imagemagick=8:6.9.10.23+dfsg-2.1 \
+        imagemagick=8:6.9.10.23+dfsg-2.1+deb10u1 \
         librsvg2-bin=2.44.10-2.1 \
         poppler-utils=0.71.0-5 \
         toilet=0.3-1.2 \
