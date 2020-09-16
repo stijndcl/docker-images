@@ -18,7 +18,7 @@ WORKDIR /home/runner
 USER runner
 RUN cabal update \
  # happy must be installed to install haskell-src-exts
- && cabal install happy-1.19.9 \
+ && cabal install happy-1.19.12 \
  && cabal install \
         hlint-3.1.6 \
         QuickCheck-2.13.2 \
