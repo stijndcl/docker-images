@@ -16,17 +16,19 @@ RUN apt-get update \
 # As the runner user
 WORKDIR /home/runner
 USER runner
-RUN \
+RUN cabal update \
  # happy must be installed to install haskell-src-exts
-    stack --system-ghc --no-install-ghc --resolver=lts-16.14 install happy \
- && stack --system-ghc --no-install-ghc --resolver=lts-16.14 install hlint \
-        QuickCheck \
-        HUnit \
-        MissingH \
-        stm \
-        gloss \
- # Clearing package cache
- && rm -rf /home/runner/.cabal/packages/* \
+ && cabal install happy-1.19.12 \
+ && cabal install \
+        hlint-3.2 \
+        QuickCheck-2.14.1 \
+        HUnit-1.6.0.0 \
+        MissingH-1.4.3.0 \
+        stm-2.5.0.0 \
+        gloss-1.13.1.2 \
+        ghc-lib-parser-8.10.2.20200916 \
+        splitmix-0.1.0.1 \
+        ghc-lib-parser-ex-8.10.0.16 \
  # Create the working directory
  && mkdir workdir
 
