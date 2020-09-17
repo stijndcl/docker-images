@@ -35,7 +35,10 @@ RUN apt-get update && \
   Rscript -e "install.packages('scatterplot3d')" && \
   Rscript -e "install.packages('tidyverse')" && \
   Rscript -e "install.packages('ISLR')" && \
-  Rscript -e "install.packages('MASS')"
+  Rscript -e "install.packages('MASS')" && \
+  Rscript -e "install.packages('glmnet')" && \
+  Rscript -e "install.packages('leaps')" && \
+  Rscript -e "install.packages('pls')"
 
 
 USER runner
