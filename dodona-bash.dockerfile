@@ -4,7 +4,7 @@ RUN apt-get update && \
     apt-get -y install --no-install-recommends \
         bc=1.07.1-2+b1 \
         binutils=2.31.1-16 \
-        bsdmainutils=12.1.7 \
+        bsdmainutils=11.1.2+b1 \
         cowsay=3.03+dfsg2-6 \
         ed=1.15-1 \
         figlet=2.2.5-3 \
