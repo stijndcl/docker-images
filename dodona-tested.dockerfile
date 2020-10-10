@@ -1,10 +1,11 @@
-FROM python:3.8-buster
+FROM python:3.9.0-slim-buster
 
 # Environment Kotlin
 ENV SDKMAN_DIR /usr/local/sdkman
 ENV PATH $SDKMAN_DIR/candidates/kotlin/current/bin:$PATH
-
-RUN apt-get update \
+# Add manual directory for default-jdk
+RUN mkdir -p /usr/share/man/man1/ \
+ && apt-get update \
  && apt-get install -y --no-install-recommends \
        # TESTed Java and Kotlin judge dependency
        default-jdk=2:1.11-71 \
