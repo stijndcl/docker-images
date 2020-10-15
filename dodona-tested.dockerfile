@@ -1,11 +1,10 @@
-FROM python:3.9.0-slim-buster
+FROM python:3.8-buster
 
 # Environment Kotlin
 ENV SDKMAN_DIR /usr/local/sdkman
 ENV PATH $SDKMAN_DIR/candidates/kotlin/current/bin:$PATH
 # Add manual directory for default-jdk
-RUN mkdir -p /usr/share/man/man1/ \
- && apt-get update \
+RUN apt-get update \
  && apt-get install -y --no-install-recommends \
        # TESTed Java and Kotlin judge dependency
        default-jdk=2:1.11-71 \
@@ -23,7 +22,7 @@ RUN mkdir -p /usr/share/man/man1/ \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* \
  # TESTed Judge depencencies
- && pip install jsonschema==3.2.0 psutil==5.7.0 mako==1.1.2 pydantic==1.4 toml==0.10.1 typing_inspect==0.6.0 pylint==2.6.0 \
+ && pip install jsonschema==3.2.0 psutil==5.7.0 mako==1.1.2 pydantic==1.4 toml==0.10.1 typing_inspect==0.6.0 pylint==2.6.0 esprima==4.0.1 \
  # TESTed Kotlin judge dependencies
  && bash -c 'set -o pipefail && curl -s "https://get.sdkman.io?rcupdate=false" | bash' \
  && chmod a+x "$SDKMAN_DIR/bin/sdkman-init.sh" \
