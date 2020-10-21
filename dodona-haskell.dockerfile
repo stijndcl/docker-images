@@ -4,7 +4,7 @@ RUN apt-get update \
  # Install jq for json querying in bash
  # Install freeglut headers for gloss compilation
  && apt-get install -y --no-install-recommends \
-        jshon=20131010-3+b1 \
+        jq=1.5+dfsg-2+b1 \
         freeglut3-dev=2.8.1-3 \
  && rm -rf /var/lib/apt/lists/* \
  # Make sure the students can't find our secret path, which is mounted in
