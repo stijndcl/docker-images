@@ -16,6 +16,7 @@ RUN apt-get update && \
         imagemagick=8:6.9.10.23+dfsg-2.1+deb10u1 \
         librsvg2-bin=2.44.10-2.1 \
         poppler-utils=0.71.0-5 \
+        strace=4.26-0.2 \
         toilet=0.3-1.2 \
         tree=1.8.0-1 \
         unzip=6.0-23+deb10u1 \
