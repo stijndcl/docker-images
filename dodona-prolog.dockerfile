@@ -1,4 +1,4 @@
-FROM swipl:8.2.0
+FROM swipl:8.2.2
 
 # Install python3 for processing
 RUN apt-get update && \
