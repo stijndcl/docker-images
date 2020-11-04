@@ -1,8 +1,11 @@
 FROM swipl:8.2.2
 
-# Install python3 for processing
+# Install python3 for processing (and procps for pkill)
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends python3=3.5.3-1 && \
+    apt-get install -y --no-install-recommends \
+        python3=3.5.3-1 \
+        procps=2:3.3.12-3+deb9u1 \
+        && \
     rm -rf /var/lib/apt/lists/* && \
     apt-get clean && \
     chmod 711 /mnt && \
