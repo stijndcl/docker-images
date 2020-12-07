@@ -15,9 +15,9 @@ RUN chmod 711 /mnt && \
   rm -rf /var/lib/apt/lists/* && \
   apt-get clean && \
   # Judge dependencies
-  pip install --upgrade pylint==2.4.2 jsonschema==3.1.1 pyshp==2.1.0 psutil==5.7.0 mako==1.1.2 pydantic==1.4 pyhumps==1.3.1 typing_inspect==0.5.0 && \
+  pip install --upgrade pylint==2.6.0 jsonschema==3.2.0 pyshp==2.1.2 psutil==5.7.3 mako==1.1.3 pydantic==1.5.1 pyhumps==1.6.1 typing_inspect==0.6.0 && \
   # Exercise dependencies
-  pip install --upgrade numpy==1.17.2 biopython==1.74 sortedcontainers==2.1.0
+  pip install --upgrade numpy==1.19.4 biopython==1.78 sortedcontainers==2.2.2 pandas==1.1.4
 
 WORKDIR /tmp
 
