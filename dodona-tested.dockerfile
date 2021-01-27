@@ -13,7 +13,7 @@ RUN apt-get update \
        # TESTed C judge dependency
        gcc-8=8.3.0-6 \
        # TESTed Javascript judge dependency
-       nodejs=10.21.0~dfsg-1~deb10u1 \
+       nodejs=10.23.1~dfsg-1~deb10u1 \
        # Additional dependencies
        dos2unix=7.4.0-1 \
        curl=7.64.0-4+deb10u1 \
@@ -42,4 +42,3 @@ USER runner
 WORKDIR /home/runner/workdir
 
 COPY main.sh /main.sh
-
