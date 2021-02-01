@@ -1,13 +1,14 @@
-FROM python:3.8-buster
+FROM python:3.9.1-slim-buster
 
 # Environment Kotlin
 ENV SDKMAN_DIR /usr/local/sdkman
 ENV PATH $SDKMAN_DIR/candidates/kotlin/current/bin:$PATH
 # Add manual directory for default-jdk
-RUN apt-get update \
+RUN mkdir -p /usr/share/man/man1mkdir -p /usr/share/man/man1 \
+ && apt-get update \
  && apt-get install -y --no-install-recommends \
        # TESTed Java and Kotlin judge dependency
-       default-jdk=2:1.11-71 \
+       openjdk-11-jdk=11.0.9.1+1-1~deb10u2 \
        # TESTed Haskell judge dependency
        haskell-platform=2014.2.0.0.debian8 \
        # TESTed C judge dependency
@@ -22,11 +23,11 @@ RUN apt-get update \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* \
  # TESTed Judge depencencies
- && pip install jsonschema==3.2.0 psutil==5.7.0 mako==1.1.2 pydantic==1.4 toml==0.10.1 typing_inspect==0.6.0 pylint==2.6.0 esprima==4.0.1 \
+ && pip install jsonschema==3.2.0 psutil==5.7.0 mako==1.1.2 pydantic==1.7.3 toml==0.10.1 typing_inspect==0.6.0 pylint==2.6.0 esprima==4.0.1 lark==0.10.1 pyyaml==5.3.1 \
  # TESTed Kotlin judge dependencies
  && bash -c 'set -o pipefail && curl -s "https://get.sdkman.io?rcupdate=false" | bash' \
  && chmod a+x "$SDKMAN_DIR/bin/sdkman-init.sh" \
- && bash -c "source \"$SDKMAN_DIR/bin/sdkman-init.sh\" && sdk install kotlin" \
+ && bash -c "source \"$SDKMAN_DIR/bin/sdkman-init.sh\" && sdk install kotlin 1.4.10" \
  # Haskell dependencies
  && cabal update \
  && cabal install aeson --global --force-reinstalls \
