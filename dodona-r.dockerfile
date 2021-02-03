@@ -20,11 +20,15 @@ RUN apt-get update && \
       , 'NHANES' \
       , 'R6' \
       , 'RColorBrewer' \
+      , 'ROCR' \
       , 'base64enc' \
       , 'car' \
       , 'coin' \
       , 'dplyr' \
       , 'dslabs' \
+      , 'e1071' \
+      , 'gam' \
+      , 'gbm' \
       , 'ggplot2' \
       , 'ggrepel' \
       , 'ggridges' \
@@ -37,9 +41,11 @@ RUN apt-get update && \
       , 'multcomp' \
       , 'plotrix' \
       , 'pls' \
+      , 'randomForest' \
       , 'scales' \
       , 'scatterplot3d' \
       , 'tidyverse' \
+      , 'tree' \
     ))"
 
 
