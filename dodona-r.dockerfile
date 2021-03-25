@@ -34,9 +34,13 @@ RUN apt-get update && \
       , 'ggridges' \
       , 'ggthemes' \
       , 'glmnet' \
+      , 'gridBase' \
+      , 'gridGraphics' \
       , 'gridExtra' \
       , 'jsonlite' \
       , 'kableExtra' \
+      , 'lattice' \
+      , 'latticeExtra' \
       , 'leaps' \
       , 'multcomp' \
       , 'plotrix' \
