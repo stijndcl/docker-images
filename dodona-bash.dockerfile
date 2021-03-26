@@ -9,7 +9,7 @@ RUN apt-get update && \
         curl=7.64.0-4+deb10u1 \
         ed=1.15-1 \
         figlet=2.2.5-3 \
-        file=1:5.35-4+deb10u1 \
+        file=1:5.35-4+deb10u2 \
         fortune-mod=1:1.99.1-7+b1 \
         git=1:2.20.1-2+deb10u3 \
         gcc=4:8.3.0-1 \
@@ -20,7 +20,7 @@ RUN apt-get update && \
         strace=4.26-0.2 \
         toilet=0.3-1.2 \
         tree=1.8.0-1 \
-        unzip=6.0-23+deb10u1 \
+        unzip=6.0-23+deb10u2 \
         vim=2:8.1.0875-5 \
         wget=1.20.1-1.1 && \
         zip=3.0-11+b1 \

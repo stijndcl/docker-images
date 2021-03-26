@@ -14,12 +14,12 @@ RUN mkdir -p /usr/share/man/man1mkdir -p /usr/share/man/man1 \
        # TESTed C judge dependency
        gcc-8=8.3.0-6 \
        # TESTed Javascript judge dependency
-       nodejs=10.23.1~dfsg-1~deb10u1 \
+       nodejs=10.24.0~dfsg-1~deb10u1 \
        # Additional dependencies
        dos2unix=7.4.0-1 \
        curl=7.64.0-4+deb10u1 \
        zip=3.0-11+b1 \
-       unzip=6.0-23+deb10u1 \
+       unzip=6.0-23+deb10u2 \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* \
  # TESTed Judge depencencies
