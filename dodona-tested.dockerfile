@@ -17,7 +17,6 @@ RUN mkdir -p /usr/share/man/man1mkdir -p /usr/share/man/man1 \
        cppcheck=1.86-1 \
        # TESTed Javascript judge dependency
        nodejs=10.24.0~dfsg-1~deb10u1 \
-       eslint=5.16.0~dfsg+~4.16.8-5 \
        # Additional dependencies
        dos2unix=7.4.0-1 \
        curl=7.64.0-4+deb10u1 \
@@ -32,6 +31,8 @@ RUN mkdir -p /usr/share/man/man1mkdir -p /usr/share/man/man1 \
  && chmod a+x "$SDKMAN_DIR/bin/sdkman-init.sh" \
  && bash -c "source \"$SDKMAN_DIR/bin/sdkman-init.sh\" && sdk install kotlin 1.4.10" \
  && curl -sSLO https://github.com/pinterest/ktlint/releases/download/0.41.0/ktlint && chmod a+x ktlint && mv ktlint /usr/local/bin/ \
+ # JavaScript dependencies
+ && npm install -g eslint \
  # Haskell dependencies
  && cabal update \
  && cabal install aeson --global --force-reinstalls \
