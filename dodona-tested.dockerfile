@@ -31,7 +31,6 @@ RUN mkdir -p /usr/share/man/man1mkdir -p /usr/share/man/man1 \
  && bash -c 'set -o pipefail && curl -s "https://get.sdkman.io?rcupdate=false" | bash' \
  && chmod a+x "$SDKMAN_DIR/bin/sdkman-init.sh" \
  && bash -c "source \"$SDKMAN_DIR/bin/sdkman-init.sh\" && sdk install kotlin 1.4.10" \
- && curl -sSLO https://github.com/pinterest/ktlint/releases/download/0.41.0/ktlint && chmod a+x ktlint && mv ktlint /usr/local/bin/ \
  # JavaScript dependencies
  && npm install -g eslint@7.23.0 \
  # Haskell dependencies
