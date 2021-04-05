@@ -1,0 +1,26 @@
+version: 2
+updates:
+- package-ecosystem: docker
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "13:00"
+    timezone: Europe/Brussels
+  open-pull-requests-limit: 99
+  ignore:
+  - dependency-name: node
+    versions:
+    - ">= 15.a"
+    - "< 16"
+  - dependency-name: openjdk
+    versions:
+    - ">= 13.a"
+    - "< 14"
+  - dependency-name: openjdk
+    versions:
+    - ">= 14.a"
+    - "< 15"
+  - dependency-name: swipl
+    versions:
+    - ">= 8.1.a"
+    - "< 8.2"
