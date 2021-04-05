@@ -3,7 +3,7 @@ updates:
 - package-ecosystem: docker
   directory: "/"
   schedule:
-    interval: daily
+    interval: weekly
     time: "13:00"
     timezone: Europe/Brussels
   open-pull-requests-limit: 99
