@@ -6,7 +6,7 @@ RUN apt-get update && \
         binutils=2.31.1-16 \
         bsdmainutils=11.1.2+b1 \
         cowsay=3.03+dfsg2-6 \
-        curl=7.64.0-4+deb10u1 \
+        curl=7.64.0-4+deb10u2 \
         ed=1.15-1 \
         figlet=2.2.5-3 \
         file=1:5.35-4+deb10u2 \
