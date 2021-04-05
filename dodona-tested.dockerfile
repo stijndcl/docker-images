@@ -20,7 +20,7 @@ RUN mkdir -p /usr/share/man/man1mkdir -p /usr/share/man/man1 \
        npm=5.8.0+ds6-4+deb10u2 \
        # Additional dependencies
        dos2unix=7.4.0-1 \
-       curl=7.64.0-4+deb10u1 \
+       curl=7.64.0-4+deb10u2 \
        zip=3.0-11+b1 \
        unzip=6.0-23+deb10u2 \
  && apt-get clean \
