@@ -48,6 +48,7 @@ RUN apt-get update && \
       , 'randomForest' \
       , 'scales' \
       , 'scatterplot3d' \
+      , 'sp' \
       , 'tidyverse' \
       , 'tree' \
     ))"
