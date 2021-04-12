@@ -13,7 +13,7 @@ RUN mkdir -p /usr/share/man/man1mkdir -p /usr/share/man/man1 \
        zip=3.0-11+b1 \
        unzip=6.0-23+deb10u2 \
  # Add nodejs v14
- && curl -fsSL https://deb.nodesource.com/setup_14.x | bash - \
+ && bash -c 'set -o pipefail && curl -fsSL https://deb.nodesource.com/setup_14.x | bash -' \
  # Install programming languages
  && apt-get install -y --no-install-recommends \
        # TESTed Java and Kotlin judge dependency
