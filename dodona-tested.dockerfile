@@ -6,6 +6,15 @@ ENV PATH $SDKMAN_DIR/candidates/kotlin/current/bin:$PATH
 # Add manual directory for default-jdk
 RUN mkdir -p /usr/share/man/man1mkdir -p /usr/share/man/man1 \
  && apt-get update \
+ # Install additional dependencies
+ && apt-get install -y --no-install-recommends \
+       dos2unix=7.4.0-1 \
+       curl=7.64.0-4+deb10u1 \
+       zip=3.0-11+b1 \
+       unzip=6.0-23+deb10u2 \
+ # Add nodejs v14
+ && curl -fsSL https://deb.nodesource.com/setup_14.x | bash - \
+ # Install programming languages
  && apt-get install -y --no-install-recommends \
        # TESTed Java and Kotlin judge dependency
        openjdk-11-jdk=11.0.9.1+1-1~deb10u2 \
@@ -16,13 +25,7 @@ RUN mkdir -p /usr/share/man/man1mkdir -p /usr/share/man/man1 \
        gcc-8=8.3.0-6 \
        cppcheck=1.86-1 \
        # TESTed Javascript judge dependency
-       nodejs=10.24.0~dfsg-1~deb10u1 \
-       npm=5.8.0+ds6-4+deb10u2 \
-       # Additional dependencies
-       dos2unix=7.4.0-1 \
-       curl=7.64.0-4+deb10u1 \
-       zip=3.0-11+b1 \
-       unzip=6.0-23+deb10u2 \
+       nodejs=14.16.1-1nodesource1 \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* \
  # TESTed Judge depencencies
