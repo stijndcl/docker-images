@@ -26,6 +26,8 @@ RUN mkdir -p /usr/share/man/man1mkdir -p /usr/share/man/man1 \
        cppcheck=1.86-1 \
        # TESTed Javascript judge dependency
        nodejs=14.16.1-1nodesource1 \
+       # TESTed bash judge dependency
+       shellcheck=0.5.0-3 \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* \
  # TESTed Judge depencencies
