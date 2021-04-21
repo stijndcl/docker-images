@@ -32,6 +32,8 @@ for worker in $workers; do
         ssh "$worker" "docker pull $img"
         echo
     done
+    echo "=== Pruning old images on $worker ==="
+    ssh "$worker" "docker system prune"
 done
 
 
