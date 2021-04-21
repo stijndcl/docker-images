@@ -30,6 +30,7 @@ RUN apt-get update && \
       , 'gam' \
       , 'gbm' \
       , 'ggplot2' \
+      , 'ggplotify' \
       , 'ggrepel' \
       , 'ggridges' \
       , 'ggthemes' \
