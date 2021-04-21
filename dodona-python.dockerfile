@@ -15,13 +15,13 @@ RUN chmod 711 /mnt && \
   rm -rf /var/lib/apt/lists/* && \
   apt-get clean && \
   # Judge dependencies
-  pip install --upgrade pylint==2.6.0 jsonschema==3.2.0 pyshp==2.1.2 psutil==5.7.3 mako==1.1.3 pydantic==1.5.1 pyhumps==1.6.1 typing_inspect==0.6.0 && \
+  pip install --no-cache-dir --upgrade pylint==2.6.0 jsonschema==3.2.0 pyshp==2.1.2 psutil==5.7.3 mako==1.1.3 pydantic==1.5.1 pyhumps==1.6.1 typing_inspect==0.6.0 && \
   # Exercise dependencies
-  pip install --upgrade numpy==1.19.4 biopython==1.78 sortedcontainers==2.2.2 pandas==1.1.4
+  pip install --no-cache-dir --upgrade numpy==1.19.4 biopython==1.78 sortedcontainers==2.2.2 pandas==1.1.4
 
 WORKDIR /tmp
 
-RUN wget http://faculty.virginia.edu/wrpearson/fasta/fasta3/fasta-36.3.8h.tar.gz && \
+RUN wget --progress=dot:giga http://faculty.virginia.edu/wrpearson/fasta/fasta3/fasta-36.3.8h.tar.gz && \
   tar xzf fasta-36.3.8h.tar.gz
 
 WORKDIR /tmp/fasta-36.3.8h/src
