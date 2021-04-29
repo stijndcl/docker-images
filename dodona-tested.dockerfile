@@ -1,8 +1,11 @@
 FROM python:3.9.4-slim-buster
 
+# Environment Checkstyle
+ENV CHECKSTYLE_JAR /opt/checkstyle-8.41-all.jar
 # Environment Kotlin
 ENV SDKMAN_DIR /usr/local/sdkman
 ENV PATH $SDKMAN_DIR/candidates/kotlin/current/bin:$PATH
+ENV KTLINT_JAR /opt/ktlint.jar
 # Add manual directory for default-jdk
 RUN mkdir -p /usr/share/man/man1mkdir -p /usr/share/man/man1 \
  && apt-get update \
@@ -17,7 +20,7 @@ RUN mkdir -p /usr/share/man/man1mkdir -p /usr/share/man/man1 \
  # Install programming languages
  && apt-get install -y --no-install-recommends \
        # TESTed Java and Kotlin judge dependency
-       openjdk-11-jdk=11.0.9.1+1-1~deb10u2 \
+       openjdk-11-jdk=11.0.11+9-1~deb10u1 \
        # TESTed Haskell judge dependency
        haskell-platform=2014.2.0.0.debian8 \
        hlint=2.1.10-2+b1 \
@@ -41,6 +44,10 @@ RUN mkdir -p /usr/share/man/man1mkdir -p /usr/share/man/man1 \
  # Haskell dependencies
  && cabal update \
  && cabal install aeson --global --force-reinstalls \
+ # Download Checkstyle
+ && curl -H 'Accept: application/vnd.github.v4.raw' -L  https://github.com/checkstyle/checkstyle/releases/download/checkstyle-8.41/checkstyle-8.41-all.jar --output "$CHECKSTYLE_JAR" \
+ # Download KTlint
+ && curl -H 'Accept: application/vnd.github.v4.raw' -L https://github.com/pinterest/ktlint/releases/download/0.41.0/ktlint --output "$KTLINT_JAR" \
  # Make sure the students can't find our secret path, which is mounted in
  # /mnt with a secure random name.
  && chmod 711 /mnt \
