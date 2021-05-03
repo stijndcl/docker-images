@@ -29,11 +29,11 @@ fi
 for worker in $workers; do
     for img in $images; do
         echo "=== Pulling $img on $worker ==="
-        ssh "$worker" "docker pull $img"
+        ssh -p 4840 dodona@"$worker" "docker pull $img"
         echo
     done
     echo "=== Pruning old images on $worker ==="
-    ssh "$worker" "docker system prune"
+    ssh "$worker" "docker system prune -f"
 done
 
 
