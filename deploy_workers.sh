@@ -33,7 +33,7 @@ for worker in $workers; do
         echo
     done
     echo "=== Pruning old images on $worker ==="
-    ssh "$worker" "docker system prune -f"
+    ssh -p 4840 dodona@"$worker" "docker system prune -f"
 done
 
 
