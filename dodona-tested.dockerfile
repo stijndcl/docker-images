@@ -6,6 +6,7 @@ ENV CHECKSTYLE_JAR /opt/checkstyle-8.41-all.jar
 ENV SDKMAN_DIR /usr/local/sdkman
 ENV PATH $SDKMAN_DIR/candidates/kotlin/current/bin:$PATH
 ENV KTLINT_JAR /opt/ktlint.jar
+ENV NODE_PATH /usr/lib/node_modules
 # Add manual directory for default-jdk
 RUN mkdir -p /usr/share/man/man1mkdir -p /usr/share/man/man1 \
  && apt-get update \
@@ -40,7 +41,7 @@ RUN mkdir -p /usr/share/man/man1mkdir -p /usr/share/man/man1 \
  && chmod a+x "$SDKMAN_DIR/bin/sdkman-init.sh" \
  && bash -c "source \"$SDKMAN_DIR/bin/sdkman-init.sh\" && sdk install kotlin 1.4.10" \
  # JavaScript dependencies
- && npm install -g eslint@7.23.0 \
+ && npm install -g eslint@7.23.0 abstract-syntax-tree@2.17.6 \
  # Haskell dependencies
  && cabal update \
  && cabal install aeson --global --force-reinstalls \
