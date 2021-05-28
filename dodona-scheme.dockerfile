@@ -1,10 +1,8 @@
 FROM racket/racket:8.1
 
-MAINTAINER dirk@dinf.vub.ac.be
-
 # add generic tools
 RUN apt-get update \
-    && apt-get install -y jq=1.5+dfsg-2+b1 \
+    && apt-get install --no-install-recommends -y jq=1.5+dfsg-2+b1 \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean \
     # add a unit testing framework
