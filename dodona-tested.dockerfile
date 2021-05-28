@@ -17,7 +17,7 @@ RUN mkdir -p /usr/share/man/man1mkdir -p /usr/share/man/man1 \
  # Install programming languages
  && apt-get install -y --no-install-recommends \
        # TESTed Java and Kotlin judge dependency
-       openjdk-11-jdk=11.0.9.1+1-1~deb10u2 \
+       openjdk-11-jdk=11.0.11+9-1~deb10u1 \
        # TESTed Haskell judge dependency
        haskell-platform=2014.2.0.0.debian8 \
        hlint=2.1.10-2+b1 \
