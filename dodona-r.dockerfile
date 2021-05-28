@@ -1,4 +1,4 @@
-FROM r-base:4.0.5
+FROM r-base:4.1.0
 
 # Make sure the students can't find our secret path, which is mounted in
 # /mnt with a secure random name.
