@@ -21,10 +21,10 @@ RUN chmod 711 /mnt && \
 
 WORKDIR /tmp
 
-RUN wget --progress=dot:giga http://faculty.virginia.edu/wrpearson/fasta/fasta3/fasta-36.3.8h.tar.gz && \
+RUN wget --progress=dot:giga -O fasta-36.3.8h.tar.gz https://github.com/wrpearson/fasta36/archive/refs/tags/v36.3.8h_04-May-2020.tar.gz && \
   tar xzf fasta-36.3.8h.tar.gz
 
-WORKDIR /tmp/fasta-36.3.8h/src
+WORKDIR /tmp/fasta36-36.3.8h_04-May-2020/src
 
 RUN make -f ../make/Makefile.linux64 all && \
   sed -i "/XDIR/s#= .*#= /usr/bin#" ../make/Makefile.linux64 && \
@@ -32,7 +32,7 @@ RUN make -f ../make/Makefile.linux64 all && \
 
 WORKDIR /tmp
 
-RUN rm fasta-36.3.8h.tar.gz fasta-36.3.8h -r && \
+RUN rm fasta-36.3.8h.tar.gz fasta36-36.3.8h_04-May-2020 -r && \
   fc-cache -f && \
   apt-get -y purge --autoremove gcc g++ libc6-dev make wget zlib1g-dev && \
   mkdir -p /home/runner/workdir && \
