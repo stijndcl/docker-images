@@ -5,8 +5,8 @@ RUN apt-get update \
     && apt-get install --no-install-recommends -y jq=1.5+dfsg-2+b1 \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean \
-    # add a unit testing framework
-    && raco pkg install -i --auto --binary-lib --no-cache rackunit \
+    # add racket dependencies
+    && raco pkg install -i --auto --binary-lib --no-cache --no-docs rackunit r5rs \
     # follow Dodona conventions
     && chmod 711 /mnt \
     && useradd -m runner \
