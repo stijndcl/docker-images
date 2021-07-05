@@ -1,4 +1,4 @@
-FROM python:3.9.5-slim-buster
+FROM python:3.9.6-slim-buster
 
 # Environment Checkstyle
 ENV CHECKSTYLE_JAR /opt/checkstyle-8.41-all.jar
@@ -29,7 +29,7 @@ RUN mkdir -p /usr/share/man/man1mkdir -p /usr/share/man/man1 \
        gcc-8=8.3.0-6 \
        cppcheck=1.86-1 \
        # TESTed Javascript judge dependency
-       nodejs=14.17.1-1nodesource1 \
+       nodejs=14.17.2-1nodesource1 \
        # TESTed bash judge dependency
        shellcheck=0.5.0-3 \
  && apt-get clean \
