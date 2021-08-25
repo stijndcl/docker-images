@@ -15,7 +15,7 @@ RUN apt-get update && \
   Rscript -e "install.packages(c( \
         'GGally' \
       , 'HistData' \
-      , 'ISLR' \
+      , 'ISLR2' \
       , 'MASS' \
       , 'NHANES' \
       , 'R6' \
@@ -24,6 +24,7 @@ RUN apt-get update && \
       , 'base64enc' \
       , 'car' \
       , 'coin' \
+      , 'coxed' \
       , 'dplyr' \
       , 'dslabs' \
       , 'e1071' \
@@ -50,6 +51,7 @@ RUN apt-get update && \
       , 'scales' \
       , 'scatterplot3d' \
       , 'sp' \
+      , 'survival' \
       , 'tidyverse' \
       , 'tree' \
     ))"
