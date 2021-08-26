@@ -2,7 +2,9 @@ FROM python:3.9.6-slim-buster
 
 RUN apt-get update && \
     # install procps, otherwise pkill cannot be not found
-    apt-get -y install --no-install-recommends procps && \
+    apt-get -y install --no-install-recommends \
+        procps=2:3.3.15-2 \
+        sqlite3=3.27.2-3+deb10u1 && \
     rm -rf /var/lib/apt/lists/* && \
     apt-get clean
 
