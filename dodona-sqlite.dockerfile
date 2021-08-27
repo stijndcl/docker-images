@@ -15,7 +15,9 @@ RUN chmod 711 /mnt && \
     chown -R runner:runner /home/runner && \
     chown -R runner:runner /mnt
 
-RUN pip install --no-cache-dir --upgrade pandas==1.1.4
+RUN pip install --no-cache-dir --upgrade \
+    pandas==1.1.4 \
+    sqlparse==0.4.1
 
 USER runner
 WORKDIR /home/runner/workdir
