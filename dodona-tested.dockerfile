@@ -35,11 +35,11 @@ RUN mkdir -p /usr/share/man/man1mkdir -p /usr/share/man/man1 \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* \
  # TESTed Judge depencencies
- && pip install --no-cache-dir --upgrade jsonschema==3.2.0 psutil==5.7.0 mako==1.1.2 pydantic==1.7.3 toml==0.10.1 typing_inspect==0.6.0 pylint==2.6.0 esprima==4.0.1 lark==0.10.1 pyyaml==5.4 Pygments==2.7.4 python-i18n==0.3.9 \
+ && pip install --no-cache-dir --upgrade jsonschema==3.2.0 psutil==5.7.0 mako==1.1.2 pydantic==1.7.3 toml==0.10.1 typing_inspect==0.6.0 pylint==2.6.0 lark==0.10.1 pyyaml==5.4 Pygments==2.7.4 python-i18n==0.3.9 \
  # TESTed Kotlin judge dependencies
  && bash -c 'set -o pipefail && curl -s "https://get.sdkman.io?rcupdate=false" | bash' \
  && chmod a+x "$SDKMAN_DIR/bin/sdkman-init.sh" \
- && bash -c "source \"$SDKMAN_DIR/bin/sdkman-init.sh\" && sdk install kotlin 1.4.10" \
+ && bash -c "source \"$SDKMAN_DIR/bin/sdkman-init.sh\" && sdk install kotlin 1.5.21" \
  # JavaScript dependencies
  && npm install -g eslint@7.23.0 abstract-syntax-tree@2.17.6 \
  # Haskell dependencies
@@ -48,7 +48,7 @@ RUN mkdir -p /usr/share/man/man1mkdir -p /usr/share/man/man1 \
  # Download Checkstyle
  && curl -H 'Accept: application/vnd.github.v4.raw' -L  https://github.com/checkstyle/checkstyle/releases/download/checkstyle-8.41/checkstyle-8.41-all.jar --output "$CHECKSTYLE_JAR" \
  # Download KTlint
- && curl -H 'Accept: application/vnd.github.v4.raw' -L https://github.com/pinterest/ktlint/releases/download/0.41.0/ktlint --output "$KTLINT_JAR" \
+ && curl -H 'Accept: application/vnd.github.v4.raw' -L https://github.com/pinterest/ktlint/releases/download/0.42.1/ktlint --output "$KTLINT_JAR" \
  # Make sure the students can't find our secret path, which is mounted in
  # /mnt with a secure random name.
  && chmod 711 /mnt \
