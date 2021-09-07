@@ -13,7 +13,8 @@ RUN apt-get update && \
   chown -R runner:runner /home/runner && \
   chown -R runner:runner /mnt && \
   Rscript -e "install.packages(c( \
-        'GGally' \
+        'BART' \
+      , 'GGally' \
       , 'HistData' \
       , 'ISLR2' \
       , 'MASS' \
