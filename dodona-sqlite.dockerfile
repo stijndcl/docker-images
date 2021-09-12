@@ -17,7 +17,7 @@ RUN chmod 711 /mnt && \
 
 RUN pip install --no-cache-dir --upgrade \
     pandas==1.1.4 \
-    sqlparse==0.4.1
+    sqlparse==0.4.2
 
 USER runner
 WORKDIR /home/runner/workdir
