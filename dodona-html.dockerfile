@@ -14,6 +14,8 @@ RUN chmod 711 /mnt && \
     chown -R runner:runner /home/runner && \
     chown -R runner:runner /mnt
 
+RUN pip install --no-cache-dir --upgrade beautifulsoup4==4.10.0
+
 USER runner
 WORKDIR /home/runner/workdir
 COPY main.sh /main.sh
