@@ -5,16 +5,13 @@ RUN apt-get update && \
     apt-get -y install --no-install-recommends \
         procps=2:3.3.15-2 && \
     rm -rf /var/lib/apt/lists/* && \
-    apt-get clean
-
-# apply Dodona defaults
-RUN chmod 711 /mnt && \
+    apt-get clean && \
+    chmod 711 /mnt && \
     useradd -m runner && \
     mkdir -p /home/runner/workdir && \
     chown -R runner:runner /home/runner && \
-    chown -R runner:runner /mnt
-
-RUN pip install --no-cache-dir --upgrade beautifulsoup4==4.10.0
+    chown -R runner:runner /mnt && \
+    pip install --no-cache-dir --upgrade beautifulsoup4==4.10.0
 
 USER runner
 WORKDIR /home/runner/workdir
