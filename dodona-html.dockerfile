@@ -11,7 +11,11 @@ RUN apt-get update && \
     mkdir -p /home/runner/workdir && \
     chown -R runner:runner /home/runner && \
     chown -R runner:runner /mnt && \
-    pip install --no-cache-dir --upgrade beautifulsoup4==4.10.0
+    pip install --no-cache-dir --upgrade \
+        beautifulsoup4==4.10.0 \
+        cssselect==1.1.0 \
+        lxml==4.6.3 \
+        tinycss2==1.1.0
 
 USER runner
 WORKDIR /home/runner/workdir
