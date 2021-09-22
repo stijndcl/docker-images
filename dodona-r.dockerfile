@@ -17,6 +17,7 @@ RUN apt-get update && \
       , 'GGally' \
       , 'HistData' \
       , 'ISLR2' \
+      , 'ISwR' \
       , 'MASS' \
       , 'NHANES' \
       , 'R6' \
@@ -40,7 +41,6 @@ RUN apt-get update && \
       , 'gridBase' \
       , 'gridGraphics' \
       , 'gridExtra' \
-      , 'ISwR' 
       , 'jsonlite' \
       , 'kableExtra' \
       , 'lattice' \
