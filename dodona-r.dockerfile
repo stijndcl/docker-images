@@ -40,6 +40,7 @@ RUN apt-get update && \
       , 'gridBase' \
       , 'gridGraphics' \
       , 'gridExtra' \
+      , 'ISwR' 
       , 'jsonlite' \
       , 'kableExtra' \
       , 'lattice' \
