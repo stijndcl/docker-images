@@ -17,6 +17,7 @@ RUN apt-get update && \
       , 'GGally' \
       , 'HistData' \
       , 'ISLR2' \
+      , 'ISwR' \
       , 'MASS' \
       , 'NHANES' \
       , 'R6' \
