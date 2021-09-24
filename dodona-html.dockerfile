@@ -15,7 +15,8 @@ RUN apt-get update && \
         beautifulsoup4==4.10.0 \
         cssselect==1.1.0 \
         lxml==4.6.3 \
-        tinycss2==1.1.0
+        tinycss2==1.1.0 \
+        py-emmet==1.1.10
 
 USER runner
 WORKDIR /home/runner/workdir
