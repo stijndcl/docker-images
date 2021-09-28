@@ -3,7 +3,7 @@ FROM r-base:4.1.1
 # Make sure the students can't find our secret path, which is mounted in
 # /mnt with a secure random name.
 RUN apt-get update && \
-  apt-get install -y --no-install-recommends procps=2:3.3.17-5 libcurl4-openssl-dev=7.74.0-1.3+b1 libssl-dev=1.1.1l-1 libxml2-dev=2.9.10+dfsg-6.7 && \
+  apt-get install -y --no-install-recommends procps=2:3.3.17-5 libcurl4-openssl-dev=7.74.0-1.3+b1 libssl-dev=1.1.1l-1 libxml2-dev=2.9.12+dfsg-5 && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/* && \
   chmod 711 /mnt && \
