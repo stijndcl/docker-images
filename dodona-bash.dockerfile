@@ -22,8 +22,8 @@ RUN apt-get update && \
         tree=1.8.0-1 \
         unzip=6.0-23+deb10u2 \
         vim=2:8.1.0875-5 \
-        wget=1.20.1-1.1 && \
-        zip=3.0-11+b1 \
+        wget=1.20.1-1.1 \
+        zip=3.0-11+b1 && \
     rm -rf /var/lib/apt/lists/* && \
     apt-get clean && \
     # Judge dependencies
