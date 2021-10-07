@@ -27,6 +27,7 @@ RUN apt-get update && \
       , 'car' \
       , 'coin' \
       , 'coxed' \
+      , 'data.table' \
       , 'dplyr' \
       , 'dslabs' \
       , 'e1071' \
