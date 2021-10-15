@@ -36,6 +36,7 @@ RUN apt-get update && \
       , 'coin' \
       , 'coxed' \
       , 'data.table' \
+      , 'devtools' \
       , 'dplyr' \
       , 'dslabs' \
       , 'e1071' \
@@ -93,7 +94,9 @@ RUN apt-get update && \
       , 'vader' \
       , 'wordcloud' \
       , 'wordcloud2' \
-    ))"
+    )) \
+    library(devtools) \
+    devtools::install_github(\"DougLuke/UserNetR\")"
 
 
 USER runner
