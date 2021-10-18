@@ -66,7 +66,6 @@ RUN apt-get update && \
       , 'lubridate' \
       , 'multcomp' \
       , 'node2vec' \
-      , 'pacman' \
       , 'plotrix' \
       , 'pls' \
       , 'randomForest' \
