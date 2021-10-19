@@ -93,9 +93,9 @@ RUN apt-get update && \
       , 'vader' \
       , 'wordcloud' \
       , 'wordcloud2' \
-    )) \
-    library(devtools) \
-    devtools::install_github(\"DougLuke/UserNetR\")"
+    ))" \
+    -e "library(devtools)" \
+    -e "devtools::install_github('DougLuke/UserNetR')"
 
 
 USER runner
