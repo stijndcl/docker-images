@@ -13,24 +13,34 @@ RUN apt-get update && \
   chown -R runner:runner /home/runner && \
   chown -R runner:runner /mnt && \
   Rscript -e "install.packages(c( \
-        'BART' \
+        'AUC' \
+      , 'BART' \
+      , 'BiocManager' \
       , 'GGally' \
       , 'HistData' \
       , 'ISLR2' \
       , 'ISwR' \
       , 'MASS' \
+      , 'Matrix' \
       , 'NHANES' \
       , 'R6' \
       , 'RColorBrewer' \
       , 'ROCR' \
+      , 'RWeka' \
+      , 'Rtsne' \
+      , 'SnowballC' \
       , 'base64enc' \
       , 'car' \
+      , 'caret' \
+      , 'clickstream' \
       , 'coin' \
       , 'coxed' \
       , 'data.table' \
+      , 'devtools' \
       , 'dplyr' \
       , 'dslabs' \
       , 'e1071' \
+      , 'ergm' \
       , 'gam' \
       , 'gbm' \
       , 'ggplot2' \
@@ -42,22 +52,50 @@ RUN apt-get update && \
       , 'gridBase' \
       , 'gridGraphics' \
       , 'gridExtra' \
+      , 'igraph' \
+      , 'iml' \
+      , 'intergraph' \
+      , 'irlba' \
       , 'jsonlite' \
       , 'kableExtra' \
       , 'lattice' \
       , 'latticeExtra' \
       , 'leaps' \
+      , 'lexicon' \
+      , 'lift' \
+      , 'lubridate' \
       , 'multcomp' \
+      , 'node2vec' \
       , 'plotrix' \
       , 'pls' \
       , 'randomForest' \
+      , 'reshape2' \
+      , 'rvest' \
       , 'scales' \
       , 'scatterplot3d' \
+      , 'sentimentr' \
+      , 'skimr' \
+      , 'slam' \
+      , 'sna' \
       , 'sp' \
+      , 'statnet' \
       , 'survival' \
+      , 'text2vec' \
+      , 'textclean' \
+      , 'textstem' \
+      , 'tictoc' \
+      , 'tidytext' \
       , 'tidyverse' \
+      , 'tm' \
+      , 'topicdoc' \
+      , 'topicmodels' \
       , 'tree' \
-    ))"
+      , 'vader' \
+      , 'wordcloud' \
+      , 'wordcloud2' \
+    ))" \
+    -e "library(devtools)" \
+    -e "devtools::install_github('DougLuke/UserNetR')"
 
 
 USER runner
