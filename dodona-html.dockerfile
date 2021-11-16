@@ -14,9 +14,11 @@ RUN apt-get update && \
     pip install --no-cache-dir --upgrade \
         beautifulsoup4==4.10.0 \
         cssselect==1.1.0 \
-        lxml==4.6.3 \
+        lxml==4.6.4 \
         tinycss2==1.1.0 \
-        py-emmet==1.1.10
+        py-emmet==1.1.10 \
+        html-similarity==0.3.3 \
+        colour==0.1.5
 
 USER runner
 WORKDIR /home/runner/workdir
