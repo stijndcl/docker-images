@@ -77,8 +77,10 @@ RUN apt-get update && \
       , 'node2vec' \
       , 'plotrix' \
       , 'pls' \
+      , 'qdap' \
       , 'randomForest' \
       , 'reshape2' \
+      , 'rtweet' \
       , 'rvest' \
       , 'scales' \
       , 'scatterplot3d' \
